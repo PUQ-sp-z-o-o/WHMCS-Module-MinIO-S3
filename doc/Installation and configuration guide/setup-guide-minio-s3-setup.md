@@ -1,0 +1,286 @@
+# Setup guide: MinIO S3 setup
+
+#####  [Order now](https://panel.puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
+
+There are many ways to install MinIO. Below we will introduce the installation method from binaries. In the following description, we will provide additional steps beyond the basic installation to set up the service properly. The description will include, among others, setting up the service, nginx proxy and SSL certificates.
+
+<p class="callout info">In the current example, we will use the Debian 10 operating system.</p>
+
+## 1 - Installing and configuring the MinIO server
+
+If you haven't updated the package database recently, update it:
+
+```Powershell
+sudo apt update
+```
+
+Then download the Minio server binary from the official website:
+
+```Powershell
+wget https://dl.min.io/server/minio/release/linux-amd64/minio
+```
+
+> Output
+> 
+> \# wget https://dl.min.io/server/minio/release/linux-amd64/minio  
+> \--2022-08-10 10:01:59-- https://dl.min.io/server/minio/release/linux-amd64/minio  
+> Resolving dl.min.io (dl.min.io)... 178.128.69.202, 138.68.11.125  
+> Connecting to dl.min.io (dl.min.io)|178.128.69.202|:443... connected.  
+> HTTP request sent, awaiting response... 200 OK  
+> Length: 96968704 (92M) \[application/octet-stream\]  
+> Saving to: ‘minio’
+> 
+> minio 100%\[======================================================================&gt;\] 92,48M 16,7MB/s in 6,8s
+> 
+> 2022-08-10 10:02:07 (13,6 MB/s) - ‘minio’ saved \[96968704/96968704\]
+
+Once the download is complete, a file called minio will be in your working directory. Use the following command to get the executable:
+
+```Powershell
+sudo chmod +x minio
+```
+
+Now move the file to the` /usr/local/bin` directory, where the Minio systemd startup script expects to find it:
+
+```Powershell
+sudo mv minio /usr/local/bin
+```
+
+This will allow us to write a service unit file in the next steps of this tutorial to ensure that Minio starts up automatically on system boot.
+
+For security reasons, it is recommended to avoid running the Minio server as root. This will limit the damage that can be done to the system in the event of a security breach. Because the systemd script you'll use in step 2 is looking for an account and group called minio-user, create a new user with that name:
+
+```Powershell
+sudo useradd -r minio-user -s /sbin/nologin
+```
+
+In this command, you used the -s flag to set up `/sbin/nologin` as the shell for minio-user. This is a shell that does not allow the user to log in, which is not necessary for minio-user.
+
+Next, transfer ownership of the Minio binary to **minio-use**r:
+
+```Powershell
+sudo chown minio-user:minio-user /usr/local/bin/minio
+```
+
+Next, you need to create a directory where Minio will store the files. This location will be where you store the buckets that you will use later to organize the objects you store on your Minio server. This tutorial will use the **minio** directory name:
+
+```Powershell
+sudo mkdir /usr/local/share/minio
+```
+
+Give **minio-user** ownership of this directory:
+
+```Powershell
+sudo chown minio-user:minio-user /usr/local/share/minio
+```
+
+Most server configuration files are stored in the `/etc` directory, so this is where you need to create your configuration file:
+
+```Powershell
+sudo mkdir /etc/minio
+```
+
+Give **minio-user** ownership of this directory:
+
+```Powershell
+sudo chown minio-user:minio-user /etc/minio
+```
+
+Use **Nano** or your favorite text editor to create the environment file needed to change the default configuration:
+
+```Powershell
+sudo nano /etc/default/minio
+```
+
+After opening the file, add the following lines to set a few important environment variables in the environment file:
+
+> MINIO\_ACCESS\_KEY="minio"  
+> MINIO\_VOLUMES="/usr/local/share/minio/"  
+> MINIO\_OPTS="-C /etc/minio --address :9000 --console-address :9001"  
+> MINIO\_SECRET\_KEY="miniostorage"
+
+Let's take a look at these variables and the values ​​you have set:
+
+- **MINIO\_ACCESS\_KEY**: This variable specifies the access key you will use to access the Minio browser user interface.
+- **MINIO\_SECRET\_KEY**: This variable specifies the private key you will use to pass login credentials to the Minio interface. In this tutorial, we'll use the miniostorage value, but we recommend choosing a different, more complex password to keep your server secure.
+- **MINIO\_VOLUMES**: This variable specifies the storage directory you have created for your buckets.
+- **MINIO\_OPTS**: This variable determines where and how the server serves the data. The -C flag tells Minio the configuration directory to use, and the --address flag specifies the IP address and port to bind to. If no IP address is specified, Minio will bind to whatever address is set on the server, including localhost and any Docker-related IP addresses, so we recommend that you directly specify the IP address here. You can change the default port 9000 if you like.  
+    Save and close the environment file after making changes.
+
+You have installed Minio and set a number of important environment variables. Next, you need to configure the server to run as a system service.
+
+## 2 - Installing the Systemd MinIO startup script
+
+In this step, you will set up the Minio server to manage it as a systemd service.
+
+Create a file `/etc/systemd/system/minio.service`
+
+```Powershell
+sudo nano /etc/systemd/system/minio.service
+```
+
+File contents:
+
+```
+[Unit]
+Description=MinIO
+Documentation=https://docs.min.io
+Wants=network-online.target
+After=network-online.target
+AssertFileIsExecutable=/usr/local/bin/minio
+
+[Service]
+WorkingDirectory=/usr/local/
+
+User=minio-user
+Group=minio-user
+
+EnvironmentFile=/etc/default/minio
+ExecStartPre=/bin/bash -c "if [ -z \"${MINIO_VOLUMES}\" ]; then echo \"Variable MINIO_VOLUMES not set in /etc/default/minio\"; exit 1; fi"
+
+ExecStart=/usr/local/bin/minio server $MINIO_OPTS $MINIO_VOLUMES
+
+# Let systemd restart this service always
+Restart=always
+
+# Specifies the maximum file descriptor number that can be opened by this process
+LimitNOFILE=65536
+
+# Disable timeout logic and wait until process is stopped
+TimeoutStopSec=infinity
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
+
+# Built for ${project.name}-${project.version} (${project.name})
+```
+
+Then run the following command to reload all **systemd units**:
+
+```Powershell
+sudo systemctl daemon-reload
+sudo systemctl enable minio
+```
+
+Now that the systemd script is installed and configured, it's time to start the server.
+
+## 3 - Starting the MinIO Server
+
+In this step, you will start the server and change the firewall settings to allow access through the browser interface.
+
+Start Minio server:
+
+```Powershell
+sudo systemctl start minio
+```
+
+Then check the Minio's status, the IP address it's bound to, memory usage, and more with the following command:
+
+```Powershell
+sudo systemctl status minio
+```
+
+The result will look like this:
+
+## 4 - Securing Access to MinIO Server with Let’s Encrypt SSL/TLS Certificate
+
+<p class="callout warning">You need to replace **yourdomain.com** with your own domain</p>
+
+Certbot is a console based certificate generation tool for Let's Encrypt.
+
+In this recipe, we will generate a Let's Encypt certificate using Certbot. This certificate will then be deployed for use in the MinIO server.
+
+**Install Certbot**
+
+```Powershell
+sudo apt update
+sudo apt install certbot nginx python3-certbot-nginx -y
+```
+
+**Set up Nginx proxy with MinIO Server**
+
+Proxy all requests
+
+```Powershell
+rm /etc/nginx/sites-enabled/default
+nano /etc/nginx/sites-enabled/minio
+```
+
+```Nginx
+server {
+        listen 80 default_server;
+        server_name yourdomain.com;
+        return 301 https://$host$request_uri;
+}
+
+
+server {
+        listen 443 ssl http2;
+        server_name yourdomain.com;
+
+        ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/yourdomain.com/cert.pem;
+
+        ssl_session_timeout 20m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        ssl_verify_client off;
+
+        ignore_invalid_headers off;
+
+        client_max_body_size 0;
+
+        proxy_buffering off;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header Host $http_host;
+
+                proxy_connect_timeout 300;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                chunked_transfer_encoding off;
+
+                proxy_pass http://localhost:9001;
+ }
+}
+```
+
+Obtain the SSL/TLS Certificate
+
+```Powershell
+sudo certbot --nginx -d yourdomain.com
+```
+
+Restart **nginx** wer server
+
+```Powershell
+sudo service nginx restart
+```
+
+**In order for the certificate to be updated automatically, you must add to the crontab**
+
+```Powershell
+crontab -e
+```
+
+```Powershell
+0 12 * * * /usr/bin/certbot renew --quiet
+```
+
+**The configuration is now complete.**  
+Login to the server
+
+url: https://yourdomain.com/
+
+For authorization, use the data that was written in the file `/etc/default/minio`
+
+**Username:** minio  
+**Password:** miniostorage
+
+[![image-1660127364958.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660127364958.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660127364958.png)

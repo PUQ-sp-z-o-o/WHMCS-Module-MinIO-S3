@@ -1,0 +1,18 @@
+# Add server (MinIO S3)
+
+#####  [Order now](https://panel.puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
+
+##### Add a new server to the system WHMCS.
+
+```
+System Settings->Servers->Add New Server
+```
+
+- Enter the correct **Name** and **Hostname**
+
+[![image-1660047004719.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660047004719.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660047004719.png)
+
+- In the **Server Details** section, select the "**PUQ MinIO S3**" module and enter the correct **username** and **password** for the **Synology NAS web interface**.
+- To check, click the **"Test connection"** button
+
+[![image-1660047051935.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660047051935.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660047051935.png)
