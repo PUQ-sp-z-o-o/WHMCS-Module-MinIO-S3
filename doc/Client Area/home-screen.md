@@ -1,1 +1,22 @@
+# Home screen
 
+#####  [Order now](https://panel.puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
+
+The end customer, after logging in to his own customer panel, has access to the following information and options:
+
+- Link to the user manual (*which was defined by the administrator when setting up the service.*).
+- MinIO server adress
+- Authorization data
+- Usage statistics graph
+- Table with data on the use of the service
+- Bucket Information
+
+##### Screenshot when the account is in a normal state.
+
+[![image-1660047983619.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660047983619.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660047983619.png)
+
+#####  
+
+##### Screenshot when the account is limited due to limit overflow.
+
+[![image-1660110809056.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660110809056.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660110809056.png)
