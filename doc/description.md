@@ -4,7 +4,7 @@
 
 The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution.
 
-<p class="callout info">The module requires a fully configured MinIO server to work. The module does not assist in the creation of such a server in any way.</p>
+>The module requires a fully configured MinIO server to work. The module does not assist in the creation of such a server in any way.
 
 Functions:
 
@@ -36,9 +36,9 @@ Available options in the client panel:
 
 - - - - - -
 
-<p class="callout warning">WHMCS: 8 +</p>
+>WHMCS: 8 +
 
-<p class="callout warning">MinIO: RELEASE.2022-07-17T15-43-14Z +</p>
+>MinIO: RELEASE.2022-07-17T15-43-14Z +
 
 [![image-1660045983988.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660045983988.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660045983988.png)
 
