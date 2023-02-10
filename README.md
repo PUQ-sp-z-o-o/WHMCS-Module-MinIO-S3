@@ -1,12 +1,12 @@
 # WHMCS-Module-MinIO-S3
-Provision and manage MinIO S3 object storage accounts via WHMCS module.
+The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution.
 # Description
 
 #####  [Order now](https://panel.puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
 
 The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution.
 
-<p class="callout info">The module requires a fully configured MinIO server to work. The module does not assist in the creation of such a server in any way.</p>
+>The module requires a fully configured MinIO server to work. The module does not assist in the creation of such a server in any way.
 
 Functions:
 
@@ -38,9 +38,9 @@ Available options in the client panel:
 
 - - - - - -
 
-<p class="callout warning">WHMCS: 8 +</p>
+>WHMCS: 8 +
 
-<p class="callout warning">MinIO: RELEASE.2022-07-17T15-43-14Z +</p>
+>MinIO: RELEASE.2022-07-17T15-43-14Z +
 
 [![image-1660045983988.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660045983988.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660045983988.png)
 
