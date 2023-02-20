@@ -2,7 +2,7 @@
 The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution.
 # Description
 
-#####  [Order now](https://panel.puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
+#####  [Order now](https://puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
 
 The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution.
 
