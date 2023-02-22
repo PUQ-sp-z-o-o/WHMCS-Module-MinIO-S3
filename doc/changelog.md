@@ -1,6 +1,8 @@
 # Changelog
 
-##### v1.1 Released 22-02-2023
+#####  [Order now](https://puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
+
+### v1.1 Released 22-02-2023
 
 1. Support WHMCS V8.6
 2. Support for PHP 8.1 (Loader v12) and PHP 7.4
@@ -11,6 +13,6 @@
 
 - - - - - -
 
-##### v1.0 Released 01-08-2022
+### v1.0 Released 01-08-2022
 
 First version
