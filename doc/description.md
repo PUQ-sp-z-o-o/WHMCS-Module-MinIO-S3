@@ -1,6 +1,6 @@
 # Description
 
-#####  [Order now](https://puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Forum](https://forum.puqcloud.com/viewforum.php?f=3)
+#####  [Order now](https://puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [FAQ](https://faq.puqcloud.com/))
 
 The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution.
 
@@ -38,10 +38,10 @@ Available options in the client panel:
 
 >WHMCS: 8 +
 
->MinIO: RELEASE.2022-07-17T15-43-14Z +
+>MinIO: RELEASE.2023-02-22T18-23-45Z +
 
-[![image-1660045983988.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660045983988.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660045983988.png)
+![image](https://user-images.githubusercontent.com/81689153/223066819-9ac17d3d-e12b-4d51-a9ff-f2334a0ca443.png)
 
-[![image-1660045991874.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660045991874.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660045991874.png)
+![image](https://user-images.githubusercontent.com/81689153/223067065-4dd6c703-87bb-46e6-8f24-e8d7ee831762.png)
 
-[![image-1660046070792.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660046070792.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660046070792.png)
+![image](https://user-images.githubusercontent.com/81689153/223067078-8ae59093-584f-438b-b5d7-0716e7e66189.png)
