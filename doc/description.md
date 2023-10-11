@@ -10,7 +10,7 @@ Functions:
 
 - Auto create and deploy product (User and S3 Buckets)
 - The module uses only the API to manage the accounts
-- Module supports multilingualism
+- Module supports multilingualism **(Arabic, Azerbaijani, Catalan, Chinese, Croatian, Czech, Danish, Dutch, English, Estonian, Farsi, French, German, Hebrew, Hungarian, Italian, Macedonian, Norwegian, Polish,  Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian)**
 - The module shows the current and history of data usage by the user
 - The module notifies the user about exceeding the data limit
 - The module notifies the user about suspension due to data limit
