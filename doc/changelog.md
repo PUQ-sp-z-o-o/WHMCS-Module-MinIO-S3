@@ -2,6 +2,12 @@
 
 #####  [Order now](https://puqcloud.com/index.php?rp=/store/whmcs-module-minio-s3) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [FAQ](https://faq.puqcloud.com/)
 
+### v1.5 Released 18-12-2023
+1. Support MinIO RELEASE.2023-12-14T18-51-57Z
+2. Minor changes in the client area
+
+- - - - - -
+
 ### v1.4 Released 08-09-2023
 1. Support MinIO RELEASE.2023-10-07T15-07-38Z
 2. Translations added/updated (Arabic, Azerbaijani, Catalan, Chinese, Croatian, Czech, Danish, Dutch, English, Estonian, Farsi, French, German, Hebrew, Hungarian, Italian, Macedonian, Norwegian, Polish,  Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian)
