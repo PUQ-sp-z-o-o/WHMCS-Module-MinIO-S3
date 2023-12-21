@@ -44,6 +44,8 @@ Available options in the client panel:
 
 ![image](https://user-images.githubusercontent.com/81689153/223066819-9ac17d3d-e12b-4d51-a9ff-f2334a0ca443.png)
 
+![image](https://github.com/PUQ-sp-z-o-o/WHMCS-Module-MinIO-S3/assets/81689153/34c03973-4bc2-44a0-9263-ff3635d489c8)
+
 ![image](https://user-images.githubusercontent.com/81689153/223067065-4dd6c703-87bb-46e6-8f24-e8d7ee831762.png)
 
 ![image](https://user-images.githubusercontent.com/81689153/223067078-8ae59093-584f-438b-b5d7-0716e7e66189.png)
