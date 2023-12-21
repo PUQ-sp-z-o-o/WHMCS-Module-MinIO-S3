@@ -4,6 +4,31 @@
 
 # Changelog
 
+### v1.6 Released 21-12-2023
+
+Fixed Issues:
+
+1. Resolved a bug preventing the deletion of policies when an account is deleted.
+
+Enhancements:
+
+1. Improved the API error logging system for enhanced diagnostics and troubleshooting.
+
+New Features:
+
+1. Added functionality to disable bucket creation by default.
+2. Introduced the option to set a default bucket suffix.
+
+Client Area Enhancements:
+
+1. Added the ability to disable the display of service passwords by default.
+2. Introduced a "Show" button for displaying service passwords in the Client Area.
+3. Provided options to display service passwords in plain text.
+ 
+> **You should save the 'Module Setting' in your products for the module to function correctly.**
+
+- - - - - -
+
 ### v1.5 Released 18-12-2023
 1. Support MinIO RELEASE.2023-12-14T18-51-57Z
 2. Minor changes in the client area
