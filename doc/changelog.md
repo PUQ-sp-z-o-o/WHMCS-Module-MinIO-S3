@@ -4,6 +4,50 @@
 
 # Changelog
 
+v1.7 Released 16-05-2024
+
+1. User blocking is disabled after the limit is reached
+2. When the limit is exhausted, the policy switches to "Raw policy Disk limit"
+3. Added functional buttons and policy management in the admin area
+4. Added a functional button for Recalculate Disk Space disk space so that the client can enable read and write rights after cleaning his disk
+ 
+> After updating, you need to insert and save the "Raw policy Disk limit" in the product settings
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "admin:Heal",
+                "admin:SetBucketTarget",
+                "admin:TopLocksInfo",
+                "admin:DataUsageInfo",
+                "admin:GetBucketQuota",
+                "admin:GetBucketTarget"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<USER_ID>*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<USER_ID>*"
+            ]
+        }
+    ]
+}
+```
+
+- - - - - -
+
 ### v1.6 Released 21-12-2023
 
 Fixed Issues:
