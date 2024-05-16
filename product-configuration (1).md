@@ -1,0 +1,106 @@
+# Product Configuration
+
+### MinIO S3 module **[WHMCS](https://puqcloud.com/link.php?id=77)** 
+
+#####  [Order now](https://puqcloud.com/whmcs-module-minio-s3.php) | [Dowload](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [FAQ](https://faq.puqcloud.com/)
+
+##### Add new product to WHMCS
+
+```
+System Settings->Products/Services->Create a New Product
+```
+
+In the **Module settings** section, select the **"PUQ MinIOS3"** module
+
+[![image-1715789105588.png](https://doc.puq.info/uploads/images/gallery/2024-05/scaled-1680-/image-1715789105588.png)](https://doc.puq.info/uploads/images/gallery/2024-05/image-1715789105588.png)
+
+- **License key:** A pre-purchased license key for the **"PUQ MinIOS3"** module. For the module to work correctly, the key must be active
+- **Unit:** Packet disk space units
+- **Disk space size:** Disk size in this product
+- **Notification disk limit email template:** Email template that will be sent when the disk quota is exceeded in %
+- **Notification, used disk space X %:** Sets a percentage parameter, after exceeding this parameter a notification will be sent to the user
+- **Username prefix/Username suffix:** Necessary in order to generate a username for the service, in the format: **prefix&lt;client\_id&gt;-&lt;service\_id&gt;suffix**
+- **Group:** The group that will be assigned to the user on the server side of the **MinIO S3**
+- **Raw Policy:** The policy that is assigned to the user during creation on the server
+
+<p class="callout info"> Example:</p>
+
+<p class="callout warning">**In the given policy example. The user has the right to create buckets with a name starting with the username.**</p>
+
+```JSON
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "admin:Heal",
+                "admin:SetBucketTarget",
+                "admin:TopLocksInfo",
+                "admin:DataUsageInfo",
+                "admin:GetBucketQuota",
+                "admin:GetBucketTarget"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<USER_ID>*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<USER_ID>*"
+            ]
+        }
+    ]
+}
+```
+
+- **Suspend exceeding disk limit email template:** The template of the letter that will be sent to the client if his disk limit is 100% or less 100%
+- **Save usage history (days):** The number of days it takes to save user disk usage statistics
+- **Link to instruction:** Link to the instruction, if filled out, it will be reflected in the client area
+- **Default Bucket:** Options to enable or disable the creation of a default bucket, and also set its prefix
+- **Client Area:** Client zone settings, show or not show the password in the client zone, type how to show the password.
+- **Raw policy Disk limit:** The policy that will be applied to the client when the client runs out of space.  
+    <p class="callout info"> Example:</p>
+    
+    <p class="callout warning">**The user has the right to read and get, delete buckets whose name begins with the user's name.**</p>
+
+```JSON
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "admin:Heal",
+                "admin:SetBucketTarget",
+                "admin:TopLocksInfo",
+                "admin:DataUsageInfo",
+                "admin:GetBucketQuota",
+                "admin:GetBucketTarget"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<USER_ID>*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<USER_ID>*"
+            ]
+        }
+    ]
+}
+```
+
+<p class="callout info">Attention, policy recalculation occurs once a day during the collection of server statistics (UpdateServerUsage)</p>
+
+<div id="bkmrk--0"><div></div></div>
