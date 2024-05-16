@@ -6,4 +6,11 @@
 
 ### Here is the data presented for the service admin in WHMCS
 
-[![image-1660048573272.png](https://doc.puq.info/uploads/images/gallery/2022-08/scaled-1680-/image-1660048573272.png)](https://doc.puq.info/uploads/images/gallery/2022-08/image-1660048573272.png)
+![image](https://github.com/PUQ-sp-z-o-o/WHMCS-Module-MinIO-S3/assets/81689153/f2ee3c10-6182-4d06-a095-c7b8f955fed3)
+
+The **"Update Policy"** button is used to force the system to select and apply the necessary policy. If there is more than 0 free space on the disk, a permissive policy will be applied; if there is 0 free space on the disk, a restrictive policy will be applied.
+
+The **"Set Standard Policy"** and **"Set Limited Policy"** buttons respectively enforce the application of the standard policy and the limited policy.
+
+
+Attention, policy recalculation occurs once a day during the collection of server statistics (UpdateServerUsage)
