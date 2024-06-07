@@ -4,7 +4,14 @@
 
 # Changelog
 
-v1.7 Released 16-05-2024
+### v1.8 Released 06-06-2024
+
+1. Client area more adapted for mobile version
+2. Buttons for copying login and password have been added to the client area
+
+- - - - - -
+
+### v1.7 Released 16-05-2024
 
 1. User blocking is disabled after the limit is reached
 2. When the limit is exhausted, the policy switches to "Raw policy Disk limit"
