@@ -45,9 +45,7 @@ Available options in the client panel:
 
 >MinIO: RELEASE.2023-02-22T18-23-45Z +
 
-![image](https://user-images.githubusercontent.com/81689153/223066819-9ac17d3d-e12b-4d51-a9ff-f2334a0ca443.png)
-
-![image](https://github.com/PUQ-sp-z-o-o/WHMCS-Module-MinIO-S3/assets/81689153/7246afac-ad99-4119-a648-18329615ed06)
+![image](https://github.com/PUQ-sp-z-o-o/WHMCS-Module-MinIO-S3/assets/81689153/6371ba78-dfb1-4962-a377-f760d31660dd)
 
 ![image](https://user-images.githubusercontent.com/81689153/223067065-4dd6c703-87bb-46e6-8f24-e8d7ee831762.png)
 
