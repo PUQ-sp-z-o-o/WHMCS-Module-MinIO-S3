@@ -43,7 +43,7 @@ Available options in the client panel:
 
 >WHMCS: 8 +
 
->MinIO: RELEASE.2023-02-22T18-23-45Z +
+>MinIO: RELEASE.2024-06-26T01-06-18Z +
 
 ![image](https://github.com/PUQ-sp-z-o-o/WHMCS-Module-MinIO-S3/assets/81689153/6371ba78-dfb1-4962-a377-f760d31660dd)
 
