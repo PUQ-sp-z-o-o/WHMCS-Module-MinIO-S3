@@ -5,7 +5,7 @@
 
 ## MinIO S3 WHMCS module
 
-The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution. The module requires a fully configured MinIO server to work. The module does not assist in the creation of such a server in any way.
+The module allows the company to offer its customers the possibility of managing data storage compatible with S3 object storage using the MinIO S3 solution. The module requires a fully configured MinIO server to work (supported MinIO version: **RELEASE.2025-04-22T22:12:26Z** or lower). The module does not assist in the creation of such a server in any way.
 
 ---
 
@@ -44,11 +44,16 @@ The module allows the company to offer its customers the possibility of managing
 
 ## System requirements
 
-| Requirement | Minimum |
-|-------------|---------|
+| Requirement | Minimum / Supported Version |
+|-------------|----------------------------|
 | **WHMCS** | 8.x+, 9.x+. |
 | **PHP** | 7.4, 8.1, 8.2, 8.3, 8.4 |
 | **ionCube Loader** | v15+ |
+| **MinIO Server** | `RELEASE.2025-04-22T22:12:26Z` or lower |
+
+> [!IMPORTANT]
+> **MinIO Server Version Requirement:** The module supports MinIO server versions up to **`RELEASE.2025-04-22T22:12:26Z`** (or lower). It is not compatible with higher/newer releases due to MinIO upstream API changes.
+
 
 ---
 

@@ -2,11 +2,15 @@
 
 ## Section 1 — Installing and configuring the MinIO server
 
-Update packages and download the MinIO binary:
+> [!IMPORTANT]
+> **Supported MinIO Version:** The module works exclusively with MinIO server version **`RELEASE.2025-04-22T22:12:26Z`** or lower.
+
+Update packages and download the compatible MinIO binary:
 
 ```bash
 sudo apt update
-wget https://dl.min.io/server/minio/release/linux-amd64/minio
+# Download the supported release (RELEASE.2025-04-22T22-12-26Z):
+wget https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2025-04-22T22-12-26Z -O minio
 ```
 
 Install the binary and set up the MinIO user:

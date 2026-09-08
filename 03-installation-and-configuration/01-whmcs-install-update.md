@@ -5,13 +5,18 @@
 
 ## System requirements
 
-| Requirement | Minimum |
-|-------------|---------|
+| Requirement | Minimum / Supported Version |
+|-------------|----------------------------|
 | **WHMCS** | 8.x+, 9.x+. |
 | **PHP** | 7.4, 8.1, 8.2, 8.3, 8.4 |
 | **ionCube Loader** | v15+ |
+| **MinIO Server** | `RELEASE.2025-04-22T22:12:26Z` or lower |
 
-> **Note:** The module uses ionCube encoding. Make sure ionCube Loader is installed and active on your server.
+> [!IMPORTANT]
+> **MinIO Server Version:** The module works exclusively with MinIO server version **`RELEASE.2025-04-22T22:12:26Z`** or lower. Versions newer than this release are not supported.
+>
+> **ionCube Loader:** The module uses ionCube encoding. Make sure ionCube Loader is installed and active on your server.
+
 
 ---
 
