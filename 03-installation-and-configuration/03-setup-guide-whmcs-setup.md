@@ -1,49 +1,11 @@
 # Setup guide: WHMCS setup
 
-## System requirements
-
-The module is encoded with ionCube.
-
-| Requirement | Minimum |
-|-------------|---------|
-| PHP | 8.2 or higher |
-| WHMCS | 9.x or higher |
-| ionCube Loader | v13 or newer (v14, v15) |
-
-### Older module versions for WHMCS 8
-
-- PHP 7.4: [https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/php74/](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/php74/)
-- PHP 8.1: [https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/php81/](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/php81/)
-
-> To install and update a module, you must perform one and the same action.
+### MinIO S3 module **[WHMCS](https://puqcloud.com/link.php?id=77)**
+#####  [Order now](https://puqcloud.com/whmcs-module-minio-s3.php) | [Download](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Community](https://community.puqcloud.com/)
 
 ---
 
-## Step 1 — Download
-
-```bash
-wget http://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/php82/PUQ_WHMCS-MinIO-S3-latest.zip
-```
-
-All versions available via: [http://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/](http://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/)
-
----
-
-## Step 2 — Extract
-
-```bash
-unzip PUQ_WHMCS-MinIO-S3-latest.zip
-```
-
----
-
-## Step 3 — Deploy
-
-Copy and replace the `puqMinIOS3` directory from `PUQ_WHMCS-MinIO-S3` to `WHMCS_WEB_DIR/modules/servers/`
-
----
-
-## Step 4 — Server Configuration
+## Step 1 — Add server in WHMCS
 
 Create a new MinIO S3 server in WHMCS:
 
@@ -55,15 +17,18 @@ Navigate to: **System Settings → Products/Services → Servers**
 4. Click the **Test connection** button to verify
 
 ![Add server - General settings](../img/05-add-server-1.png)
+*05-add-server-1.png*
 
 ![Add server - Module settings](../img/06-add-server-2.png)
+*06-add-server-2.png*
 
 ---
 
-## Step 5 — Create Product
+## Step 2 — Create Product
 
 Navigate to: **System Settings → Products/Services → Create a New Product**
 
 In the **Module Settings** section, select the **PUQ MinIO S3** module and configure the product options.
 
 ![WHMCS setup](../img/05-add-server-1.png)
+*05-add-server-1.png*

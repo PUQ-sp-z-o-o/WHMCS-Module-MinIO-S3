@@ -158,3 +158,4 @@ After installation, you can access the MinIO console at `https://yourdomain.com`
 - **Password:** `miniostorage`
 
 ![MinIO login screen](../img/04-minio-setup.png)
+*04-minio-setup.png*

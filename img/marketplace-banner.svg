@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0082c9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00a4e4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00a4e4;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0082c9;stop-opacity:0.05" />
+    </linearGradient>
+    <linearGradient id="bucketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00a4e4;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#0082c9;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" fill="url(#bg)"/>
+
+  <!-- Accent line top -->
+  <rect x="0" y="0" width="500" height="8" fill="url(#accent)"/>
+
+  <!-- Ambient Glow behind Icon -->
+  <circle cx="250" cy="125" r="90" fill="#0082c9" opacity="0.12" />
+  <circle cx="250" cy="125" r="60" fill="#00a4e4" opacity="0.15" />
+
+  <!-- Cloud + S3 Bucket Icon (Centered at X=250, Y=125) -->
+  <g transform="translate(250, 122)">
+    <!-- Outer Cloud Contour -->
+    <path d="M40,-5 C40,-35 15,-55 -15,-55 C-38,-55 -55,-40 -60,-20 C-80,-20 -95,-5 -95,15 C-95,35 -80,50 -60,50 L55,50 C75,50 90,35 90,15 C90,-3 75,-18 58,-20 C54,-20 48,-20 40,-5 Z"
+          fill="url(#cloudGrad)"
+          stroke="#00a4e4"
+          stroke-width="3.5"
+          stroke-linejoin="round"
+          stroke-linecap="round"/>
+
+    <!-- S3 Storage Bucket in Center of Cloud -->
+    <g transform="translate(0, -5)">
+      <!-- Bucket Rim (Ellipse) -->
+      <ellipse cx="0" cy="-6" rx="28" ry="7" fill="#16213e" stroke="#00a4e4" stroke-width="2.5"/>
+
+      <!-- Bucket Body -->
+      <path d="M-28,-6 L-20,38 C-20,43 -12,47 0,47 C12,47 20,43 20,38 L28,-6"
+            fill="url(#bucketGrad)"
+            stroke="#00a4e4"
+            stroke-width="2.5"
+            stroke-linejoin="round"/>
+
+      <!-- Bucket Handle Arch -->
+      <path d="M-28,-6 C-28,-22 28,-22 28,-6" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="3,2" opacity="0.7"/>
+
+      <!-- Storage Ring Line -->
+      <path d="M-24,14 C-16,19 16,19 24,14" fill="none" stroke="#00a4e4" stroke-width="1.8" opacity="0.8"/>
+
+      <!-- S3 Label -->
+      <text x="0" y="34" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7dd3fc" text-anchor="middle" letter-spacing="1">S3</text>
+    </g>
+
+    <!-- Floating Object Storage Blocks (Left and Right) -->
+    <g transform="translate(-62, 14)">
+      <rect x="-8" y="-8" width="16" height="16" rx="3" fill="#1a1a2e" stroke="#00a4e4" stroke-width="2"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#7dd3fc" opacity="0.8"/>
+    </g>
+
+    <g transform="translate(62, 14)">
+      <rect x="-8" y="-8" width="16" height="16" rx="3" fill="#1a1a2e" stroke="#00a4e4" stroke-width="2"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#7dd3fc" opacity="0.8"/>
+    </g>
+
+    <!-- Sync Arrows at bottom -->
+    <g transform="translate(0, 68)">
+      <!-- Left-to-right arrow -->
+      <path d="M-22,-4 C-10,-10 10,-10 22,-4" fill="none" stroke="#00a4e4" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="24,-9 26,-2 19,-3" fill="#00a4e4"/>
+      <!-- Right-to-left arrow -->
+      <path d="M22,4 C10,10 -10,10 -22,4" fill="none" stroke="#0082c9" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="-24,9 -26,2 -19,3" fill="#0082c9"/>
+    </g>
+  </g>
+
+  <!-- Module Name (Big & Readable, Spanning Edge-to-Edge) -->
+  <text x="250" y="280" font-family="Arial, sans-serif" font-size="84" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="14">MINIO S3</text>
+
+  <!-- Subtitle (Larger & Prominent) -->
+  <text x="250" y="336" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#94a3b8" text-anchor="middle" letter-spacing="2">WHMCS SERVER MODULE</text>
+
+  <!-- Separator -->
+  <rect x="150" y="362" width="200" height="4" fill="#0082c9" rx="2"/>
+
+  <!-- PUQ Software Branding (Enlarged & Centered) -->
+  <g transform="translate(155, 405)">
+    <text x="0" y="28" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#0082c9">PUQ</text>
+    <text x="92" y="28" font-family="Arial, sans-serif" font-size="22" fill="#64748b">Software</text>
+  </g>
+</svg>

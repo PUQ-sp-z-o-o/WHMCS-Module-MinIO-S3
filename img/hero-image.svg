@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b1120;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#111c38;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0b1120;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Accent Top Line Gradient -->
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0082c9;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00a4e4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cloud Fill Gradient -->
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00a4e4;stop-opacity:0.22" />
+      <stop offset="100%" style="stop-color:#0082c9;stop-opacity:0.06" />
+    </linearGradient>
+
+    <!-- S3 Bucket Fill Gradient -->
+    <linearGradient id="bucketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00a4e4;stop-opacity:0.28" />
+      <stop offset="100%" style="stop-color:#0082c9;stop-opacity:0.12" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- Accent Line Top -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+
+  <!-- Ambient Glow Behind Illustration -->
+  <circle cx="180" cy="150" r="120" fill="#0082c9" opacity="0.14" />
+  <circle cx="180" cy="150" r="80" fill="#00a4e4" opacity="0.18" />
+
+  <!-- ======================================================== -->
+  <!-- LEFT: Cloud + S3 Object Storage Bucket Illustration      -->
+  <!-- ======================================================== -->
+  <g transform="translate(180, 148) scale(1.15)">
+    <!-- Outer Cloud Contour -->
+    <path d="M40,-5 C40,-35 15,-55 -15,-55 C-38,-55 -55,-40 -60,-20 C-80,-20 -95,-5 -95,15 C-95,35 -80,50 -60,50 L55,50 C75,50 90,35 90,15 C90,-3 75,-18 58,-20 C54,-20 48,-20 40,-5 Z"
+          fill="url(#cloudGrad)"
+          stroke="#00a4e4"
+          stroke-width="3"
+          stroke-linejoin="round"
+          stroke-linecap="round"/>
+
+    <!-- S3 Storage Bucket in Center of Cloud -->
+    <g transform="translate(0, -5)">
+      <!-- Bucket Rim -->
+      <ellipse cx="0" cy="-6" rx="28" ry="7" fill="#0f172a" stroke="#00a4e4" stroke-width="2.5"/>
+
+      <!-- Bucket Body -->
+      <path d="M-28,-6 L-20,38 C-20,43 -12,47 0,47 C12,47 20,43 20,38 L28,-6"
+            fill="url(#bucketGrad)"
+            stroke="#00a4e4"
+            stroke-width="2.5"
+            stroke-linejoin="round"/>
+
+      <!-- Bucket Handle Arch -->
+      <path d="M-28,-6 C-28,-22 28,-22 28,-6" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="3,2" opacity="0.75"/>
+
+      <!-- Storage Ring Line -->
+      <path d="M-24,14 C-16,19 16,19 24,14" fill="none" stroke="#00a4e4" stroke-width="1.8" opacity="0.8"/>
+
+      <!-- S3 Label -->
+      <text x="0" y="34" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7dd3fc" text-anchor="middle" letter-spacing="1">S3</text>
+    </g>
+
+    <!-- Floating Object Storage Blocks (Left and Right) -->
+    <g transform="translate(-62, 14)">
+      <rect x="-8" y="-8" width="16" height="16" rx="3" fill="#0f172a" stroke="#00a4e4" stroke-width="2"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#7dd3fc" opacity="0.85"/>
+    </g>
+
+    <g transform="translate(62, 14)">
+      <rect x="-8" y="-8" width="16" height="16" rx="3" fill="#0f172a" stroke="#00a4e4" stroke-width="2"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#7dd3fc" opacity="0.85"/>
+    </g>
+
+    <!-- Sync Arrows at bottom -->
+    <g transform="translate(0, 68)">
+      <path d="M-22,-4 C-10,-10 10,-10 22,-4" fill="none" stroke="#00a4e4" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="24,-9 26,-2 19,-3" fill="#00a4e4"/>
+      <path d="M22,4 C10,10 -10,10 -22,4" fill="none" stroke="#0082c9" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="-24,9 -26,2 -19,3" fill="#0082c9"/>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CENTER: Typography & Features                            -->
+  <!-- ======================================================== -->
+  <g transform="translate(360, 0)">
+    <!-- Subtitle Category Tag -->
+    <text x="0" y="68" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#00a4e4" letter-spacing="3">WHMCS SERVER MODULE</text>
+
+    <!-- Main Module Title -->
+    <text x="0" y="132" font-family="Arial, sans-serif" font-size="62" font-weight="900" fill="#ffffff" letter-spacing="3">MINIO S3</text>
+
+    <!-- Gradient Divider -->
+    <rect x="0" y="152" width="500" height="4" fill="url(#accent)" rx="2"/>
+
+    <!-- Feature 1 -->
+    <g transform="translate(0, 188)">
+      <circle cx="7" cy="-5" r="4" fill="#00a4e4"/>
+      <text x="22" y="0" font-family="Arial, sans-serif" font-size="15" fill="#f1f5f9" font-weight="500">Automated MinIO User &amp; S3 Storage Bucket Provisioning</text>
+    </g>
+
+    <!-- Feature 2 -->
+    <g transform="translate(0, 218)">
+      <circle cx="7" cy="-5" r="4" fill="#00a4e4"/>
+      <text x="22" y="0" font-family="Arial, sans-serif" font-size="15" fill="#f1f5f9" font-weight="500">Real-Time Quota Management &amp; Access Credentials Delivery</text>
+    </g>
+
+    <!-- Feature 3 -->
+    <g transform="translate(0, 248)">
+      <circle cx="7" cy="-5" r="4" fill="#00a4e4"/>
+      <text x="22" y="0" font-family="Arial, sans-serif" font-size="15" fill="#f1f5f9" font-weight="500">Multi-Server Architecture with Instant Start, Suspend &amp; Terminate</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT: PUQ Software Branding & Badge                     -->
+  <!-- ======================================================== -->
+  <line x1="940" y1="50" x2="940" y2="250" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <g transform="translate(970, 0)">
+    <!-- PUQ Software Logo Group -->
+    <g transform="translate(95, 95)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#00a4e4" text-anchor="middle">PUQ</text>
+      <text x="0" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="4">SOFTWARE</text>
+    </g>
+
+    <!-- Official Integration Badge -->
+    <g transform="translate(15, 175)">
+      <rect x="0" y="0" width="160" height="42" rx="8" fill="#111c38" stroke="#00a4e4" stroke-width="1.5" stroke-opacity="0.6"/>
+      <circle cx="24" cy="21" r="9" fill="#0082c9"/>
+      <polyline points="20,21 23,24 29,18" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="42" y="25" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#93c5fd" letter-spacing="1">MARKETPLACE</text>
+    </g>
+  </g>
+</svg>

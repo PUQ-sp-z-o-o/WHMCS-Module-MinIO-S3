@@ -61,5 +61,7 @@ Disk free: {$disk_free_unit} {$unit} ({$disk_free_percentage} %)
 > **Note:** Standard WHMCS merge fields are also available in this template.
 
 ![Email template creation](../img/09-email-template-suspension-1.png)
+*09-email-template-suspension-1.png*
 
 ![Email template configuration](../img/10-email-template-suspension-2.png)
+*10-email-template-suspension-2.png*

@@ -18,3 +18,4 @@ The admin area provides the following information and controls:
 > **Important:** Policy recalculation occurs once a day during the collection of server statistics (UpdateServerUsage).
 
 ![Admin area product information](../img/03-description-admin-area.png)
+*03-description-admin-area.png*

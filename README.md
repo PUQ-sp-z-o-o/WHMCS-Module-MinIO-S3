@@ -1,7 +1,7 @@
 # Description
 
 ### MinIO S3 module **[WHMCS](https://puqcloud.com/link.php?id=77)**
-#####  [Order now](https://puqcloud.com/whmcs-module-minio-s3.php) | [Download](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [FAQ](https://faq.puqcloud.com/)
+#####  [Order now](https://puqcloud.com/whmcs-module-minio-s3.php) | [Download](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Community](https://community.puqcloud.com/)
 
 ## MinIO S3 WHMCS module
 
@@ -46,10 +46,9 @@ The module allows the company to offer its customers the possibility of managing
 
 | Requirement | Minimum |
 |-------------|---------|
-| WHMCS | 9.x or higher |
-| PHP | 8.2 or higher |
-| MinIO | RELEASE.2025-02-28T09-55-16Z or less |
-| ionCube Loader | v13 or newer (v14, v15) |
+| **WHMCS** | 8.x+, 9.x+. |
+| **PHP** | 7.4, 8.1, 8.2, 8.3, 8.4 |
+| **ionCube Loader** | v15+ |
 
 ---
 
@@ -67,11 +66,14 @@ The module allows the company to offer its customers the possibility of managing
 ### Client area — Home screen
 
 ![Client area home screen](img/01-description-client-area.png)
+*01-description-client-area.png*
 
 ### Client area — Disk statistics
 
 ![Disk statistics](img/02-description-disk-stats.png)
+*02-description-disk-stats.png*
 
 ### Admin area — Product information
 
 ![Admin area product information](img/03-description-admin-area.png)
+*03-description-admin-area.png*

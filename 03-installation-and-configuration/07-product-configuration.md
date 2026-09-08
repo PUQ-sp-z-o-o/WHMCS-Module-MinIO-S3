@@ -129,3 +129,4 @@ The policy that will be applied to the client when the client runs out of space:
 > **Important:** Policy recalculation occurs once a day during the collection of server statistics (UpdateServerUsage).
 
 ![Product configuration](../img/11-product-configuration.png)
+*11-product-configuration.png*

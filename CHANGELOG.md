@@ -1,7 +1,17 @@
 # Changelog
 
 ### MinIO S3 module **[WHMCS](https://puqcloud.com/link.php?id=77)**
-#####  [Order now](https://puqcloud.com/whmcs-module-minio-s3.php) | [Download](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [FAQ](https://faq.puqcloud.com/)
+#####  [Order now](https://puqcloud.com/whmcs-module-minio-s3.php) | [Download](https://download.puqcloud.com/WHMCS/servers/PUQ_WHMCS-MinIO-S3/) | [Community](https://community.puqcloud.com/)
+
+---
+
+## v4.0.0 (02-09-2026)
+
+- Full compatibility with WHMCS 8.x and WHMCS 9+
+- Universal **ionCube Loader v15** support for seamless encoding compatibility
+- Modernized administrative product settings interface with dynamic injection and enhanced stability
+- Improved client area responsiveness for bucket and storage management
+- Enhanced API communication reliability and performance optimizations
 
 ---
 
@@ -26,7 +36,7 @@
 
 ## v2.0 (23-09-2024)
 
-- Module coded with ionCube v13
+- Module coded with ionCube v15
 - Supported PHP versions: 7.4, 8.1, 8.2
 - Compatible with WHMCS 8.11.0+
 
